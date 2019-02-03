@@ -16,7 +16,7 @@ namespace Brackets
         /// <summary>
         /// The list of valid bracket pairs.
         /// </summary>
-        private static List<string> validPairs = new List<string> { "{}", "[]", "()" };
+        private static readonly List<string> ValidPairs = new List<string> { "{}", "[]", "()" };
 
         /// <summary>
         /// The method to validate if a piece of text has balanced bracket pairs.
@@ -30,7 +30,7 @@ namespace Brackets
             while (!string.IsNullOrEmpty(text) && result == true)
             {
                 result = false;
-                foreach (string item in validPairs)
+                foreach (string item in ValidPairs)
                 {
                     if (text.Contains(item))
                     {
